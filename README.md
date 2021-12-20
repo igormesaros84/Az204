@@ -17,3 +17,5 @@ Repo for my personal learning examples
 - [Develop solutions that use blob storage](https://github.com/igormesaros84/Learning/tree/master/Develop%20solutions%20that%20use%20Blob%20storage)
     - [Explore Azure Blob storage](https://github.com/igormesaros84/Learning/blob/master/Az-204/Develop%20solutions%20that%20use%20Blob%20storage/Explore%20Azure%20Blob%20storage.md)
     - [Manage the Azure Blob storage lifecycle](https://github.com/igormesaros84/Learning/blob/master/Az-204/Develop%20solutions%20that%20use%20Blob%20storage/Manage%20the%20Azure%20Blob%20storage%20lifecycle.md)
+    - [Work with Azure Blob storage](https://github.com/igormesaros84/Learning/blob/master/Az-204/Develop%20solutions%20that%20use%20Blob%20storage/Work%20with%20Azure%20Blob%20storage.md)
+    - [Exercise - Create blob storage using .Net](https://github.com/igormesaros84/Learning/blob/master/Az-204/Develop%20solutions%20that%20use%20Blob%20storage/Exercise%20-%20Create%20Blob%20storage%20resources%20by%20using%20the%20NET%20client%20library.md)
