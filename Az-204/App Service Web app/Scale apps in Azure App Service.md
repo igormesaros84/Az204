@@ -1,11 +1,11 @@
 # Table of contents
-[What is autoscaling?](#Whatisautoscaling)\
-[Autoscaling rules](#Autoscalingrules)\
-[When should you consider autoscaling?](#Whenshouldyouconsiderautoscaling?)\
-[Autoscale conditions](#Autoscaleconditions)\
-[How an autoscale rule analyzes metrics](#Howanautoscaleruleanalyzesmetrics)\
-[Pairing autoscale rules](#Pairingautoscalerules)\
-[Enable autoscaling](#Enableautoscaling)
+[What is autoscaling?](#What-is-autoscaling)\
+[Autoscaling rules](#Autoscaling-rules)\
+[When should you consider autoscaling?](#When-should-you-consider-autoscaling?)\
+[Autoscale conditions](#Autoscale-conditions)\
+[How an autoscale rule analyzes metrics](#How-an-autoscale-rule-analyzes-metrics)\
+[Pairing autoscale rules](#Pairing-autoscale-rules)\
+[Enable autoscaling](#Enable-autoscaling)
 # What is autoscaling?
 Autoscaling is a cloud system or process that adjusts available resources based on the current demand. Autoscaling performs scaling *in* and *out*, as opposed to scaling *up* and *down*.
 
