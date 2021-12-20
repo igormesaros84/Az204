@@ -10,7 +10,7 @@ In this exercise you'll learn how to create a simple C# function that responds t
 ## Create your local project
 1. Choose the Azure icon in the Activity bar, then in the **Azure:Functions** area, select **Create new project**.
 
-![create project](create-function.png)
+![create project](Resources/create-function.png)
 2. Choose a directory location for jour project
 3. Provide the following information at the prompts:
 
@@ -24,10 +24,10 @@ In this exercise you'll learn how to create a simple C# function that responds t
 
 ## Run the function locally
 1. Run the function by presing F5. Take note of the URL enpoint for the HTTP-trigger 
-![HttpExample url](run-function-local.png)
+![HttpExample url](Resources/run-function-local.png)
 
 2. With Core Tools running , go to the **Azure:Functions** are. Under **Functions**, expand **Local Project > Functions**. Right-click the `HttpExample` function and then choose **Execute Function Now**.
-![Execute](execute-function.png)
+![Execute](Resources/execute-function.png)
 3. In Enter request body type the request message body value of { "name": "Azure" }. Press Enter to send this request message to your function. When the function executes locally and returns a response, a notification is raised in Visual Studio Code. Information about the function execution is shown in Terminal panel.
 
 4. Press Ctrl + C to stop Core Tools and disconnect the debugger.
