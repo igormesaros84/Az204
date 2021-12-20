@@ -1,7 +1,7 @@
 # Table of contents
 [What is autoscaling?](#What-is-autoscaling)\
 [Autoscaling rules](#Autoscaling-rules)\
-[When should you consider autoscaling?](#When-should-you-consider-autoscaling?)\
+[When should you consider autoscaling?](#When-should-you-consider-autoscaling)\
 [Autoscale conditions](#Autoscale-conditions)\
 [How an autoscale rule analyzes metrics](#How-an-autoscale-rule-analyzes-metrics)\
 [Pairing autoscale rules](#Pairing-autoscale-rules)\
