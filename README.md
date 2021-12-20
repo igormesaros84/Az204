@@ -16,3 +16,4 @@ Repo for my personal learning examples
     - [Durable Functions](https://github.com/igormesaros84/Learning/blob/master/Az-204/Implement%20Azure%20Functions/Durable%20Functions.md)
 - [Develop solutions that use blob storage](https://github.com/igormesaros84/Learning/tree/master/Develop%20solutions%20that%20use%20Blob%20storage)
     - [Explore Azure Blob storage](https://github.com/igormesaros84/Learning/blob/master/Az-204/Develop%20solutions%20that%20use%20Blob%20storage/Explore%20Azure%20Blob%20storage.md)
+    - [Manage the Azure Blob storage lifecycle](https://github.com/igormesaros84/Learning/blob/master/Az-204/Develop%20solutions%20that%20use%20Blob%20storage/Manage%20the%20Azure%20Blob%20storage%20lifecycle.md)
