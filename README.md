@@ -22,3 +22,4 @@ Repo for my personal learning examples
 - [Develop solutions that use Azure Cosmos DB](https://github.com/igormesaros84/Az204/tree/master/Az-204/Develop%20solutions%20that%20use%20Azure%20Cosmos%20Db)
     - [Explore Azure Cosmos DB](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20solutions%20that%20use%20Azure%20Cosmos%20Db/Explore%20Azure%20Cosmos%20DB.md)
     - [Exercise - Create Cosmos DB in Azure Portal](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20solutions%20that%20use%20Azure%20Cosmos%20Db/Exercise%20-%20Create%20Cosmos%20DB%20in%20Azure%20Portal)
+    - [Implement partitioning in Cosmos DB](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20solutions%20that%20use%20Azure%20Cosmos%20Db/Implement%20partitioning%20in%20Azure%20Cosmos%20DB.md)
