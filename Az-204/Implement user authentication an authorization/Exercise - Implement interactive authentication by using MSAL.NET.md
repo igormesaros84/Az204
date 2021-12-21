@@ -74,3 +74,15 @@ AuthenticationResult result = await app.AcquireTokenInteractive(scopes).ExecuteA
 
 Console.WriteLine($"Token:\t{result.AccessToken}");
 ```
+
+### Run the application
+1. In the VS Code terminal run `dotnet build` to check for errors, then `dotnet run` to run the app.
+
+2. The app will open the default browser prompting you to select the account you want to authenticate with. If there are multiple accounts listed select the one associated with the tenant used in the app.
+
+3. If this is the first time you've authenticated to the registered app you will receive a Permissions requested notification asking you to approve the app to read data associated with your account. Select Accept.
+![Consent](Resources/permission-consent.png)
+4. You should see the results similar to the example below in the console.
+```
+Token:  eyJ0eXAiOiJKV1QiLCJub25jZSI6IlVhU.....
+```
