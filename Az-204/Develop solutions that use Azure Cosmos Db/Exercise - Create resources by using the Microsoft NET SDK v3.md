@@ -27,7 +27,7 @@ az cosmosdb keys list --name im-az204-cosmos --resource-group az204-cosmos-rg
 ```
 
 ## Set up the console application
-Now taht the needed resources are deoployed to Azure the next step is to set up the console application using the same terminal window in Visual Studio Code.
+Now that the needed resources are deployed to Azure the next step is to set up the console application using the same terminal window in Visual Studio Code.
 1. Create a folder for the project and change it to the folder.
 ```
 md az204-cosmos
