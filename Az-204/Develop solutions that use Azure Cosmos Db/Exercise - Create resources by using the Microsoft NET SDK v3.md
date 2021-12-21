@@ -130,3 +130,17 @@ private async Task CreateContainerAsync()
     Console.WriteLine("Created Container: {0}\n", this.container.Id);
 }
 ```
+2. Copy and paste the code below where you instantiated the `CosmosClient` to call the CreateContainer method you just added.
+```
+// Run the CreateContainerAsync method
+await this.CreateContainerAsync();
+```
+
+## Run the application
+Save your work and, in a terminal in VS Code, run the dotnet run command. The console will display the following messages.
+
+##Clean up Azure resources
+You can now safely delete the az204-cosmos-rg resource group from your account by running the command below.
+```
+az group delete --name az204-cosmos-rg --no-wait
+```
