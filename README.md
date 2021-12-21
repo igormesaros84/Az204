@@ -25,3 +25,5 @@ Repo for my personal learning examples
     - [Implement partitioning in Cosmos DB](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20solutions%20that%20use%20Azure%20Cosmos%20Db/Implement%20partitioning%20in%20Azure%20Cosmos%20DB.md)
     - [Work with Azure Cosmos DB](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20solutions%20that%20use%20Azure%20Cosmos%20Db/Work%20with%20Azure%20Cosmos%20DB.md)
     - [Exercise: Create resources by using the Microsoft .NET SDK v3](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20solutions%20that%20use%20Azure%20Cosmos%20Db/Exercise%20-%20Create%20resources%20by%20using%20the%20Microsoft%20NET%20SDK%20v3.md)
+- [Implement user authentication an authorization](https://github.com/igormesaros84/Az204/tree/master/Az-204/Implement%20user%20authentication%20an%20authorization)
+    - [Explore Microsoft identity platform](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20user%20authentication%20an%20authorization/Explore%20Microsoft%20identity%20platform.md)
