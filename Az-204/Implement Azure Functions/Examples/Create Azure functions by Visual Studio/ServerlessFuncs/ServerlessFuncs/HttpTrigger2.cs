@@ -1,35 +1,95 @@
-using System;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace ServerlessFuncs
 {
-    public static class HttpTrigger2
+    public static class TodoApi
     {
-        [FunctionName("HttpTrigger2")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
+        // This list will not clear in between calls if they are made in short succession.
+        // However on Azure it does shut down from time to time so general best practice is to have Azure functions stateless
+        // Futhermore when an Azure Function scales there will be multiple instances of the function so these values would not be available accross all isntances
+        // This is only for demo purposes and will be changed
+        static List<Todo> items = new List<Todo>();
+        [FunctionName("CreateTodo")]
+        public static async Task<IActionResult> CreateTodo(
+            // Only allowing `post` method, and configuring a route of "todo"
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "todo")]HttpRequest req, ILogger log
+            )
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            log.LogInformation("Createing a new todo list item");
+            var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            var input = JsonConvert.DeserializeObject<TodoCreateModel>(requestBody);
 
-            string name = req.Query["name"];
+            var todo = new Todo() { TaskDescription = input.TaskDescription };
+            items.Add(todo);
 
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
+            return new OkObjectResult(todo);
+        }
 
-            string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
+        [FunctionName("GetTodods")]
+        public static IActionResult GetTodos(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "todo")]HttpRequest req, ILogger log)
+        {
+            log.LogInformation("Getting todo list items");
+            return new OkObjectResult(items);
+        }
 
-            return new OkObjectResult(responseMessage);
+        [FunctionName("GetTodoById")]
+        public static IActionResult GetTodoById(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "todo/{id}")]HttpRequest req,
+            ILogger log, string id)
+        {
+            var todo = items.FirstOrDefault(t => t.Id == id);
+            if (todo == null)
+            {
+                return new NotFoundResult();
+            }
+            return new OkObjectResult(todo);
+        }
+
+        [FunctionName("UpdateTodo")]
+        public static async Task<IActionResult> UpdateTodo(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "todo/{id}")]HttpRequest req, ILogger log, string id
+            )
+        {
+            var todo = items.FirstOrDefault(t => t.Id == id);
+            if(todo == null)
+            {
+                return new NotFoundResult();
+            }
+
+            var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            var updated = JsonConvert.DeserializeObject<TodoUpdateModel>(requestBody);
+
+            todo.IsCompleted = updated.IsCompleted;
+            if(!string.IsNullOrEmpty(updated.TaskDescription))
+            {
+                todo.TaskDescription = updated.TaskDescription;
+            }
+
+            return new OkObjectResult(todo);
+        }
+
+        [FunctionName("DeleteTodo")]
+        public static IActionResult DeleteTodo(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "todo/{id}")]HttpRequest req, ILogger log, string id)
+        {
+            var todo = items.FirstOrDefault(t => t.Id == id);
+            if(todo == null)
+            {
+                return new NotFoundResult();
+            }
+            items.Remove(todo);
+
+            return new OkResult();
         }
     }
 }
