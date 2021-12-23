@@ -9,6 +9,7 @@ Repo for my personal learning examples
     - [Configure Web App Settings](https://github.com/igormesaros84/Learning/blob/master/Az-204/App%20Service%20Web%20app/Configure%20Web%20App%20settings.md)
     - [Scale apps in Azure App Service](https://github.com/igormesaros84/Learning/blob/master/Az-204/App%20Service%20Web%20app/Scale%20apps%20in%20Azure%20App%20Service.md)
     - [App Service deployment slots](https://github.com/igormesaros84/Learning/blob/master/Az-204/App%20Service%20Web%20app/App%20Service%20deployment%20slots.md)
+    - [AZ-204-01_lab_ak](https://github.com/igormesaros84/Az204/blob/master/Az-204/App%20Service%20Web%20app/AZ-204_01_lab_ak.md)
 - [Implement Azure Functions](https://github.com/igormesaros84/Learning/tree/master/Az-204/Implement%20Azure%20Functions)
     - [Explore Azure Functions](https://github.com/igormesaros84/Learning/blob/master/Az-204/Implement%20Azure%20Functions/Explore%20Azure%20Functions.md)
     - [Develop Azure Functions](https://github.com/igormesaros84/Learning/blob/master/Az-204/Implement%20Azure%20Functions/Develop%20Azure%20Functions.md)
