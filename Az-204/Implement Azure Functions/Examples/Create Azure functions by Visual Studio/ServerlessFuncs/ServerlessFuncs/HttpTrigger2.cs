@@ -5,11 +5,9 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using System.Linq;
-using Microsoft.WindowsAzure.Storage.Table;
-using Microsoft.WindowsAzure.Storage;
+using Microsoft.Azure.Cosmos.Table;
 
 namespace ServerlessFuncs
 {
@@ -33,18 +31,18 @@ namespace ServerlessFuncs
             return new OkObjectResult(todo);
         }
 
-        [FunctionName("GetTodods")]
+        [FunctionName("GetTodos")]
         public static async Task<IActionResult> GetTodos(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "todo")]HttpRequest req, 
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "todo")]HttpRequest req,
             [Table("todos", Connection = "AzureWebJobsStorage")] CloudTable todoTable,
             ILogger log)
         {
             log.LogInformation("Getting todo list items");
             var query = new TableQuery<TodoTableEntity>();
             var segment = await todoTable.ExecuteQuerySegmentedAsync(query, null);
-
             return new OkObjectResult(segment.Select(Mappings.ToTodo));
         }
+
 
         [FunctionName("GetTodoById")]
         public static IActionResult GetTodoById(

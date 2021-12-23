@@ -169,6 +169,8 @@ public class TodoTableEntity : TableEntity
     public bool IsCompleted { get; set; }
 }
 ```
+
+> `TableEntity` can should be used from `Microsoft.Azure.Cosmos.Table;`
 2. Include the `Microsoft.Azure.WebJobs.Extensions.Storage` nuget package
 > NOTE: They have for some reason removed `TableAttribute` from the nuget package above. [Until they add it back again](https://github.com/Azure/azure-sdk-for-net/issues/25342) you should use an earlier version 4 for this example.
 
@@ -205,7 +207,7 @@ public static async Task<IActionResult> GetTodos(
 ```
 and add the namespace usage
 ```
-using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.Azure.Cosmos.Table;
 ```
 
 6. Update `GetTodoById` with this code:
@@ -285,5 +287,9 @@ public static async Task<IActionResult> DeleteTodo(
 ```
 `ETag = "*"` we supply a wildcard charter for the `ETag` specifying that we are happy to delete the row what ever version it may be. `ETag` are table storage's way of protecting you from concurrency issues.
 
+# Testing changes
 
+1. You can use the create method from the [Postman Collection](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20Azure%20Functions/Examples/Create%20Azure%20functions%20by%20Visual%20Studio/ServerlessFuncs/Todo%20Api.postman_collection.json) mentioned earlier to create a few todo elements.
+2. Then you can open `Microsoft Azure Storage Explorer` and verify that the items have been created. As you can see in the `
+![image bellow](Resources/azure-storage-explorer.png) in the **Local & Attached > Storage Accounts > (Emulator - Default Ports)(Key) > Tables > todos** there are 2 rows that I have created using postman.
 
