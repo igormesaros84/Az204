@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ServerlessFuncs": {
+      "commandName": "Project",
+      "executablePath": "C:\\Users\\igor.mesaros\\AppData\\Local\\AzureFunctionsTools\\Releases\\3.30.1\\cli\\func.exe"
+    }
+  }
+}
