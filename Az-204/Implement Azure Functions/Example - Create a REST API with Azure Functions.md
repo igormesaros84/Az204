@@ -287,9 +287,107 @@ public static async Task<IActionResult> DeleteTodo(
 ```
 `ETag = "*"` we supply a wildcard charter for the `ETag` specifying that we are happy to delete the row what ever version it may be. `ETag` are table storage's way of protecting you from concurrency issues.
 
-# Testing changes
+## Testing changes
 
 1. You can use the create method from the [Postman Collection](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20Azure%20Functions/Examples/Create%20Azure%20functions%20by%20Visual%20Studio/ServerlessFuncs/Todo%20Api.postman_collection.json) mentioned earlier to create a few todo elements.
 2. Then you can open `Microsoft Azure Storage Explorer` and verify that the items have been created. As you can see in the `
 ![image bellow](Resources/azure-storage-explorer.png) in the **Local & Attached > Storage Accounts > (Emulator - Default Ports)(Key) > Tables > todos** there are 2 rows that I have created using postman.
+
+## Timer trigger
+1. Create new trigger
+![create-trigger](Resources/add-new-function.png)
+
+2. Select a `Timer Trigger`. Notice the *Schedule* that is a CRON expression and it is set to run every 5 minutes.
+![Timer-trigger](Resources/timer-function.png)
+
+3. Modify the `Run` method so it looks like this:
+```
+[FunctionName("ScheduledFunction")]
+public static async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, 
+    [Table("todos", Connection = "AzureWebJobsStorage")] CloudTable todoTable,
+    ILogger log)
+{
+    var query = new TableQuery<TodoTableEntity>();
+    var segment = await todoTable.ExecuteQuerySegmentedAsync(query, null);
+
+    var deleted = 0;
+    foreach(var todo in segment)
+    {
+        if (todo.IsCompleted)
+        {
+            await todoTable.ExecuteAsync(TableOperation.Delete(todo));
+            deleted++;
+        }
+    }
+    log.LogInformation($"Deleted {deleted} items at {DateTime.Now}");
+}
+```
+This will take the `todos` table and delete all that are completed.
+
+## Testing
+You can update a todo using the [Postman Collection](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20Azure%20Functions/Examples/Create%20Azure%20functions%20by%20Visual%20Studio/ServerlessFuncs/Todo%20Api.postman_collection.json) and then wait for the scheduled trigger to fire. You should see the following in the logs:
+```
+[2021-12-25T16:35:00.336Z] Executing 'ScheduledFunction' (Reason='Timer fired at 2021-12-25T16:35:00.0140744+00:00', Id=8a8552e5-b4fa-4c40-b462-35c48e2ad707)
+[2021-12-25T16:35:00.466Z] Deleted 1 items at 25/12/2021 16:35:00
+[2021-12-25T16:35:00.468Z] Executed 'ScheduledFunction' (Succeeded, Id=8a8552e5-b4fa-4c40-b462-35c48e2ad707, Duration=454ms)
+```
+## Queue output binding, Queue trigger Blob input binding
+1. Modify `CreateTodo` to add a new parameter to the method:
+
+```
+[Queue("todos", Connection = "AzureWebJobsStorage")] IAsyncCollector<Todo> todoQueue,
+```
+
+So now our `CreateTodo` function has 2 output bindings:
+```
+[Table("todos", Connection = "AzureWebJobsStorage")]IAsyncCollector<TodoTableEntity> todoTable,
+[Queue("todos", Connection = "AzureWebJobsStorage")] IAsyncCollector<Todo> todoQueue,
+```
+It writes to the table storage and posts to the queue:
+```
+await todoTable.AddAsync(todo.ToTableEntity());
+await todoQueue.AddAsync(todo);
+```
+2. Create new `QueueTrigger`
+![create-trigger](Resources/add-new-function.png)
+![configure-queue-trigger](Resources/configure-queue-trigger.png)
+
+3. Change the generated `Run` method input parameter `myQueueItem` from type `string` to type `Todo` so that the value gets automatically serialized to a `Todo` item.
+
+```
+public static class QueueListeners
+{
+    [FunctionName("QueueListeners")]
+    public static void Run([QueueTrigger("todos", Connection = "AzureWebJobsStorage")]Todo todo, ILogger log)
+    {
+        log.LogInformation($"C# Queue trigger function processed: {todo}");
+    }
+}
+```
+4. We would like to write the received *todo* into a file, so lets add a `Blob` binding as an input parameter to the `Run` method.
+
+```
+[Blob("todos", Connection = "AzureWebJobsStorage")]CloudBlobContainer container,
+```
+5. Add the code that will create a file the blob storage and add some text to it:
+```
+[FunctionName("QueueListeners")]
+public static async Task Run([QueueTrigger("todos", Connection = "AzureWebJobsStorage")]Todo todo,
+    [Blob("todos", Connection = "AzureWebJobsStorage")]CloudBlobContainer container,
+    ILogger log)
+{
+    // Ensure that our blob exists, as it doesn't get created automatically
+    await container.CreateIfNotExistsAsync();
+    var blob = container.GetBlockBlobReference($"{todo.Id}.txt");
+    await blob.UploadTextAsync($"Created a new task: {todo.TaskDescription}");
+    log.LogInformation($"C# Queue trigger function processed: {todo.TaskDescription}");
+}
+```
+## Testing
+You should create a new todo item using the [Postman Collection](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20Azure%20Functions/Examples/Create%20Azure%20functions%20by%20Visual%20Studio/ServerlessFuncs/Todo%20Api.postman_collection.json) mentioned earlier.\
+Once it successfully completes you should see an info log in the console and in the `Microsoft Azure Storage Explorer` you should see a new file in the `todos` blob container
+
+![blob-file](Resources/blob-storage-new-file.png)
+
+
 

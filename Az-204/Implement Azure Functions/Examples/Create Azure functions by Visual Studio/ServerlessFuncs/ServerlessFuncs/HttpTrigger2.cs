@@ -18,6 +18,7 @@ namespace ServerlessFuncs
             // Only allowing `post` method, and configuring a route of "todo"
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "todo")]HttpRequest req, 
             [Table("todos", Connection = "AzureWebJobsStorage")]IAsyncCollector<TodoTableEntity> todoTable,
+            [Queue("todos", Connection = "AzureWebJobsStorage")] IAsyncCollector<Todo> todoQueue,
             ILogger log
             )
         {
@@ -27,6 +28,7 @@ namespace ServerlessFuncs
 
             var todo = new Todo() { TaskDescription = input.TaskDescription };
             await todoTable.AddAsync(todo.ToTableEntity());
+            await todoQueue.AddAsync(todo);
 
             return new OkObjectResult(todo);
         }
