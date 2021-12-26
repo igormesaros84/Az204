@@ -303,7 +303,7 @@ public static async Task<IActionResult> DeleteTodo(
 3. Modify the `Run` method so it looks like this:
 ```
 [FunctionName("ScheduledFunction")]
-public static async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, 
+public static async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer,
     [Table("todos", Connection = "AzureWebJobsStorage")] CloudTable todoTable,
     ILogger log)
 {
@@ -388,6 +388,32 @@ You should create a new todo item using the [Postman Collection](https://github.
 Once it successfully completes you should see an info log in the console and in the `Microsoft Azure Storage Explorer` you should see a new file in the `todos` blob container
 
 ![blob-file](Resources/blob-storage-new-file.png)
+
+# Running Functions in Azure
+## Deployment options
+- Manual Deploy from *Visual Studio* or *VS Code* with Azure Function Extensions
+- Git Continuos deployment from *GitHub* or *Azure Devops*
+- Zip *Kudu API*, *Azure Functions Core Tools*, Azure CLI
+
+## Public from Visual Studio
+1. Just simply right click on the Azure project in *Visual Studio* and press **Publish**
+![publish-function](Resources/publish-funcion.png)
+2. Choose to create a new function app
+![create-new](Resources/create-new-function-app.png)
+![crete-app-service](Resources/create-new-function-app-service.png)
+3. Then just press publish
+![publish](Resources/publish.png)
+4. New function and all other resources should be visible on the portal
+![portal-view](Resources/function-on-portal.png)
+> Note that all the functions created will be **read only** as we have only published the dll containing the functions.
+
+## Testing
+You can grab the function URL from the overview blade 
+
+![overview](Resources/function-address.png) 
+
+and use that address in the [Postman Collection](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20Azure%20Functions/Examples/Create%20Azure%20functions%20by%20Visual%20Studio/ServerlessFuncs/Todo%20Api.postman_collection.json)
+
 
 
 
