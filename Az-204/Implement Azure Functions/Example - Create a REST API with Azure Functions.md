@@ -414,6 +414,39 @@ You can grab the function URL from the overview blade
 
 and use that address in the [Postman Collection](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20Azure%20Functions/Examples/Create%20Azure%20functions%20by%20Visual%20Studio/ServerlessFuncs/Todo%20Api.postman_collection.json)
 
+# Running Functions in Containers
+1. Create docker file
+```
+func init --docker-only
+```
 
+This should create a multi stage docker file
+```
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS installer-env
 
+COPY . /src/dotnet-function-app
+RUN cd /src/dotnet-function-app && \
+    mkdir -p /home/site/wwwroot && \
+    dotnet publish *.csproj --output /home/site/wwwroot
 
+# To enable ssh & remote debugging on app service change the base image to the one below
+# FROM mcr.microsoft.com/azure-functions/dotnet:3.0-appservice
+FROM mcr.microsoft.com/azure-functions/dotnet:3.0
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
+    AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+
+COPY --from=installer-env ["/home/site/wwwroot", "/home/site/wwwroot"]
+```
+
+- The first stage creates a container using dotnet sdk and sets in in a variable called `installer-env` we can then copy our source code and build it in this container. The result will be copied to `/home/site/wwwroot`.
+- Then in the 2nd container that we create from a much smaller dotnet:3.0 image we set `AzureWebJobsScriptRoot` environment variable where the root folder for our functions is and we configure logging `AzureFunctionsJobHost__Logging__Console__IsEnabled`. Lastly we copy the published files from `instaler-env` to this container.
+
+2. Run `docker build -t serverlessfunc:v1 .` to build the container
+3. Get connection string to your azure functions storage account: \
+`$connStr = az storage account show-connection-string -g todo-rg -n todofunctionstorage -o tsv`
+3. Run `docker run -e AzureWebJobsStorage=$connStr -p 8080:80 serverlessfuncs:v1` 
+
+> in case you get errors when starting docker you will have to `docker ps` to get list of running containers. `docker stop (the first couple of characters of the dockerid)` then `docker rm (again the 1st couple of characters of the id)`
+
+## Testing
+you can test this out by pointing Postman to `localhost:8080`
