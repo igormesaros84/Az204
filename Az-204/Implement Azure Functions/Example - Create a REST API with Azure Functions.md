@@ -303,7 +303,7 @@ public static async Task<IActionResult> DeleteTodo(
 3. Modify the `Run` method so it looks like this:
 ```
 [FunctionName("ScheduledFunction")]
-public static async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, 
+public static async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer,
     [Table("todos", Connection = "AzureWebJobsStorage")] CloudTable todoTable,
     ILogger log)
 {
@@ -389,5 +389,64 @@ Once it successfully completes you should see an info log in the console and in 
 
 ![blob-file](Resources/blob-storage-new-file.png)
 
+# Running Functions in Azure
+## Deployment options
+- Manual Deploy from *Visual Studio* or *VS Code* with Azure Function Extensions
+- Git Continuos deployment from *GitHub* or *Azure Devops*
+- Zip *Kudu API*, *Azure Functions Core Tools*, Azure CLI
 
+## Public from Visual Studio
+1. Just simply right click on the Azure project in *Visual Studio* and press **Publish**
+![publish-function](Resources/publish-funcion.png)
+2. Choose to create a new function app
+![create-new](Resources/create-new-function-app.png)
+![crete-app-service](Resources/create-new-function-app-service.png)
+3. Then just press publish
+![publish](Resources/publish.png)
+4. New function and all other resources should be visible on the portal
+![portal-view](Resources/function-on-portal.png)
+> Note that all the functions created will be **read only** as we have only published the dll containing the functions.
 
+## Testing
+You can grab the function URL from the overview blade 
+
+![overview](Resources/function-address.png) 
+
+and use that address in the [Postman Collection](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20Azure%20Functions/Examples/Create%20Azure%20functions%20by%20Visual%20Studio/ServerlessFuncs/Todo%20Api.postman_collection.json)
+
+# Running Functions in Containers
+1. Create docker file
+```
+func init --docker-only
+```
+
+This should create a multi stage docker file
+```
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS installer-env
+
+COPY . /src/dotnet-function-app
+RUN cd /src/dotnet-function-app && \
+    mkdir -p /home/site/wwwroot && \
+    dotnet publish *.csproj --output /home/site/wwwroot
+
+# To enable ssh & remote debugging on app service change the base image to the one below
+# FROM mcr.microsoft.com/azure-functions/dotnet:3.0-appservice
+FROM mcr.microsoft.com/azure-functions/dotnet:3.0
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
+    AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+
+COPY --from=installer-env ["/home/site/wwwroot", "/home/site/wwwroot"]
+```
+
+- The first stage creates a container using dotnet sdk and sets in in a variable called `installer-env` we can then copy our source code and build it in this container. The result will be copied to `/home/site/wwwroot`.
+- Then in the 2nd container that we create from a much smaller dotnet:3.0 image we set `AzureWebJobsScriptRoot` environment variable where the root folder for our functions is and we configure logging `AzureFunctionsJobHost__Logging__Console__IsEnabled`. Lastly we copy the published files from `instaler-env` to this container.
+
+2. Run `docker build -t serverlessfunc:v1 .` to build the container
+3. Get connection string to your azure functions storage account: \
+`$connStr = az storage account show-connection-string -g todo-rg -n todofunctionstorage -o tsv`
+3. Run `docker run -e AzureWebJobsStorage=$connStr -p 8080:80 serverlessfuncs:v1` 
+
+> in case you get errors when starting docker you will have to `docker ps` to get list of running containers. `docker stop (the first couple of characters of the dockerid)` then `docker rm (again the 1st couple of characters of the id)`
+
+## Testing
+you can test this out by pointing Postman to `localhost:8080`
