@@ -32,3 +32,7 @@ Repo for my personal learning examples
     - [Implement user authentication using MSAL](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20user%20authentication%20an%20authorization/Implement%20authentication%20with%20MS%20Authentication%20library.md)
     - [Exercise: Implement user authentication using MSAL](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20user%20authentication%20an%20authorization/Exercise%20-%20Implement%20interactive%20authentication%20by%20using%20MSAL.NET.md)
     - [Implement shared access signatures](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20user%20authentication%20an%20authorization/Implement%20shared%20access%20signatures.md)
+- [Implement Event based solutions](https://github.com/igormesaros84/Az204/tree/master/Az-204/Develop%20Event%20based%20solutions)
+    -[Explore Azure Event Grid](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Explore%20Azure%20Event%20Grid.md)
+    - [Exercise: Route custom events to web endpoint by using Azure CLI](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Exercise%20-%20Route%20custom%20events%20to%20web%20endpoint%20with%20Azure%20CLI.md)
+    - [Explore Azure Event Hub](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Explore%20Azure%20Event%20Hubs.md)
