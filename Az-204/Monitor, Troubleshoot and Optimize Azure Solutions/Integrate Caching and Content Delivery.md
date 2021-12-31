@@ -7,6 +7,7 @@
     - [Accessing the Redis instance](#Accessing-the-Redis-instance)
     - [Adding an expiration time to values](#Adding-an-expiration-time-to-values)
 - [Interact with Azure Cache for Redis by using .NET](#Interact-with-Azure-Cache-for-Redis-by-using-.NET)
+-[Executing other commands](#Executing-other-commands)
 
 # Develop for Azure Cache for Redis 
 Caching is done by temporarily copying frequently accessed data to fast storage that's located close to the application. If this fast data storage is located closer to the application than the original source, then caching can significantly improve response times for client applications by service data more quickly. Redis improves the performance and scalability of an application that uses backend data stored heavily. It keeps frequently accessed data in the server memory.
