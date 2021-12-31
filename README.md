@@ -38,3 +38,7 @@ Repo for my personal learning examples
     - [Explore Azure Event Hub](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Explore%20Azure%20Event%20Hubs.md)
     - [Exercise - Create Azure Event Hubs](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Exercise%20-%20Create%20Azure%20Event%20Hub.md)
     - [Implement Notification Hubs solution](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Implement%20Azure%20Notification%20Hubs%20Solutions.md)
+- [Monitor, Troubleshoot and Optimize Azure Solutions](https://github.com/igormesaros84/Az204/tree/master/Az-204/Monitor%2C%20Troubleshoot%20and%20Optimize%20Azure%20Solutions)
+    - [Develop for stroage on CDNs](https://github.com/igormesaros84/Az204/blob/master/Az-204/Monitor%2C%20Troubleshoot%20and%20Optimize%20Azure%20Solutions/Develop%20for%20stroage%20on%20CDNs.md)
+    - [Integrate Caching and Content Delivery](https://github.com/igormesaros84/Az204/blob/master/Az-204/Monitor%2C%20Troubleshoot%20and%20Optimize%20Azure%20Solutions/Integrate%20Caching%20and%20Content%20Delivery.md)
+    - [Exercise: Connect an app to Azure Cache for Redis by using .NET Core](https://github.com/igormesaros84/Az204/blob/master/Az-204/Monitor%2C%20Troubleshoot%20and%20Optimize%20Azure%20Solutions/Exercise%20-%20Connect%20an%20app%20to%20Azure%20Cache%20for%20Redis%20by%20%20Net%20Core.md)
