@@ -37,3 +37,4 @@ Repo for my personal learning examples
     - [Exercise: Route custom events to web endpoint by using Azure CLI](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Exercise%20-%20Route%20custom%20events%20to%20web%20endpoint%20with%20Azure%20CLI.md)
     - [Explore Azure Event Hub](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Explore%20Azure%20Event%20Hubs.md)
     - [Exercise - Create Azure Event Hubs](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Exercise%20-%20Create%20Azure%20Event%20Hub.md)
+    - [Implement Notification Hubs solution](https://github.com/igormesaros84/Az204/blob/master/Az-204/Develop%20Event%20based%20solutions/Implement%20Azure%20Notification%20Hubs%20Solutions.md)
