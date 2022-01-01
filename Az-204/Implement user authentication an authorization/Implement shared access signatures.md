@@ -1,3 +1,12 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Introduction](#introduction)
+- [Discover shared access signatures](#discover-shared-access-signatures)
+  - [Types o shared access signatures](#types-o-shared-access-signatures)
+  - [How shared access signatures work](#how-shared-access-signatures-work)
+- [Choose when to use shared access signatures](#choose-when-to-use-shared-access-signatures)
+- [Explore stored access policies](#explore-stored-access-policies)
+  - [Creating a stored access policy](#creating-a-stored-access-policy)
 # Introduction
 A shared access signature (SAS) is a URI that grants restricted access rights to Azure Storage resources. You can provide a shared access signature to clients that you want grant delegate access to certain storage accounts resources.
 

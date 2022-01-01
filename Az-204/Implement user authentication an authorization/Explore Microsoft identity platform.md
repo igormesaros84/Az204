@@ -1,3 +1,19 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Explore the Microsoft identity platform](#explore-the-microsoft-identity-platform)
+- [Explore service principals](#explore-service-principals)
+  - [Application object](#application-object)
+  - [Service principal object](#service-principal-object)
+  - [Relationship between application objects and service principals](#relationship-between-application-objects-and-service-principals)
+- [Discover permission and consent](#discover-permission-and-consent)
+  - [Permission types](#permission-types)
+  - [Consent types](#consent-types)
+    - [Static user consent](#static-user-consent)
+    - [Incremental and dynamic user consent](#incremental-and-dynamic-user-consent)
+    - [Admin consent](#admin-consent)
+    - [Requesting individual user consent](#requesting-individual-user-consent)
+- [Discover conditional access](#discover-conditional-access)
+  - [How does Conditional Access impact an app?](#how-does-conditional-access-impact-an-app)
 # Explore the Microsoft identity platform
 There are a several components that make up the Microsoft identity platform:
 - **OAuth 2.0 and OpenId Connect standard-compliant authentication** service enabling developers to authenticate several identity types, including:

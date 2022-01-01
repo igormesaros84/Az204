@@ -1,3 +1,12 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Explore Azure Blob storage client library](#explore-azure-blob-storage-client-library)
+- [Manage container properties and metadata by using .NET](#manage-container-properties-and-metadata-by-using-net)
+  - [Retrieve container properties](#retrieve-container-properties)
+  - [Set and retrieve metadata](#set-and-retrieve-metadata)
+- [Set and retriev properties and metadata from blob resources by using REST](#set-and-retriev-properties-and-metadata-from-blob-resources-by-using-rest)
+  - [Metadata header formate](#metadata-header-formate)
+  - [Standard HTTP properties for containers and blobs](#standard-http-properties-for-containers-and-blobs)
 # Explore Azure Blob storage client library
 
 Below are the classes in the Azure.Storage.Blobs namespace and their purpose:

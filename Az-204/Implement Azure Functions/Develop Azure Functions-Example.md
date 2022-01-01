@@ -1,4 +1,10 @@
-# Excercise: Create an Azure Function by using Visual Studio Code
+# Table of content
+- [Table of content](#table-of-content)
+- [Exercise: Create an Azure Function by using Visual Studio Code](#exercise-create-an-azure-function-by-using-visual-studio-code)
+  - [Prerequisites](#prerequisites)
+  - [Create your local project](#create-your-local-project)
+  - [Run the function locally](#run-the-function-locally)
+# Exercise: Create an Azure Function by using Visual Studio Code
 In this exercise you'll learn how to create a simple C# function that responds to HTTP requests. After creating and testing the code locally in Visual Studio Code you will deploy to Azure.
 
 ## Prerequisites

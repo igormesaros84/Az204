@@ -1,3 +1,14 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Identify key benefits of Azure Cosmos DB](#identify-key-benefits-of-azure-cosmos-db)
+  - [Key benefits of global distribution](#key-benefits-of-global-distribution)
+- [Explore the resource hierarchy](#explore-the-resource-hierarchy)
+  - [Elements in an Azure Cosmos account](#elements-in-an-azure-cosmos-account)
+  - [Azure Cosmos containers](#azure-cosmos-containers)
+- [Explore consistency levels](#explore-consistency-levels)
+- [Choose the right consistency level](#choose-the-right-consistency-level)
+  - [SQL API and Table API](#sql-api-and-table-api)
+- [Discover request units](#discover-request-units)
 # Identify key benefits of Azure Cosmos DB
 
 Azure Cosmos DB is designed to provide low latency, elastic scalability of throughput, well-defined semantics for data consistency, and high availability.

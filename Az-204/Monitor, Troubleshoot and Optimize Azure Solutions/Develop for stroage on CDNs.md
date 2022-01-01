@@ -1,3 +1,20 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Develop for storage on CDNs](#develop-for-storage-on-cdns)
+- [Explore Azure Content Delivery Networks](#explore-azure-content-delivery-networks)
+  - [How it works](#how-it-works)
+  - [Requirements](#requirements)
+  - [Limitations](#limitations)
+- [Control cache behavior on Azure Content Delivery Networks](#control-cache-behavior-on-azure-content-delivery-networks)
+  - [Controlling caching behavior](#controlling-caching-behavior)
+  - [Caching and time to live (TTL)](#caching-and-time-to-live-ttl)
+  - [Content updating](#content-updating)
+  - [Geo-filtering](#geo-filtering)
+- [Interact with Azure Content Delivery Networks by using .NET](#interact-with-azure-content-delivery-networks-by-using-net)
+  - [Create a CDN client](#create-a-cdn-client)
+  - [List CDN profiles and endpoints](#list-cdn-profiles-and-endpoints)
+  - [Create CDN profiles and endpoints](#create-cdn-profiles-and-endpoints)
+  - [Purge an endpoint](#purge-an-endpoint)
 # Develop for storage on CDNs
 A content delivery network (CDN) is a distributed network of servers that can efficiently deliver web content to users. CDNs' store cached content on edge servers in point-of-presence (POP) locations that are close to end users, to minimize latency.
 

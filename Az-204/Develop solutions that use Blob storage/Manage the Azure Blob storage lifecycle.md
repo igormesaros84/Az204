@@ -1,3 +1,16 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Explore the Azure Blob storage lifecycle](#explore-the-azure-blob-storage-lifecycle)
+  - [Access tiers](#access-tiers)
+  - [Manage the data lifecycle](#manage-the-data-lifecycle)
+- [Discover Blob storage lifecycle policies](#discover-blob-storage-lifecycle-policies)
+- [Implement Blob storage lifecycle policies](#implement-blob-storage-lifecycle-policies)
+  - [Azure portal Code View](#azure-portal-code-view)
+  - [Azure CLI](#azure-cli)
+- [Rehydrate blob data from the archive tier](#rehydrate-blob-data-from-the-archive-tier)
+  - [Rehydration priority](#rehydration-priority)
+  - [Copy an archived blob to an online tier](#copy-an-archived-blob-to-an-online-tier)
+  - [Change a blobs access tier to an online tier](#change-a-blobs-access-tier-to-an-online-tier)
 # Explore the Azure Blob storage lifecycle
 ## Access tiers
 Azure storage offers different access tiers, allowing you to store blob object data in the most cost-effective manner. Available access tiers include:

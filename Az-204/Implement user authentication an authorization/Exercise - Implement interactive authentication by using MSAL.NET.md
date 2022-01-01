@@ -1,3 +1,13 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Exercise: Implement interactive authentication by using MSAL.NET](#exercise-implement-interactive-authentication-by-using-msalnet)
+  - [Register new application](#register-new-application)
+  - [Set up the console application](#set-up-the-console-application)
+  - [Build the console app](#build-the-console-app)
+    - [Ad packages and using statements](#ad-packages-and-using-statements)
+    - [Add code for the interactive authentication](#add-code-for-the-interactive-authentication)
+    - [Acquire a token](#acquire-a-token)
+    - [Run the application](#run-the-application)
 # Exercise: Implement interactive authentication by using MSAL.NET
 In this exercise you'll learn how to perform the following actions:
 

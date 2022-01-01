@@ -1,3 +1,9 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Explore staging environments](#explore-staging-environments)
+- [Slot swapping](#slot-swapping)
+- [Route trafic in App Service](#route-trafic-in-app-service)
+- [Routing manually](#routing-manually)
 # Explore staging environments
 When ypu deploy your we app to Azure App Service, you can use a separate deployment slot isntead of the default production slot when you're running in the Standard, Premium, or Isolated App Service plan tier.
 Each App Service plan tier supports a different number of deployment slots. There's no additional charge for using deployment slots. 

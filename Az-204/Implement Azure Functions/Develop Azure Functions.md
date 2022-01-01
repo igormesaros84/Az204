@@ -1,3 +1,12 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Explore Azure Functions development](#explore-azure-functions-development)
+- [Create triggers and bindings](#create-triggers-and-bindings)
+  - [Trigger and binding definitions](#trigger-and-binding-definitions)
+  - [Azure Functions trigger and binding example](#azure-functions-trigger-and-binding-example)
+  - [C# script example](#c-script-example)
+  - [JavaScript example](#javascript-example)
+  - [Class library example](#class-library-example)
 # Explore Azure Functions development
 The function.json file defines the function's trigger, bindings, and other configuration settings. 
 

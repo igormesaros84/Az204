@@ -1,3 +1,16 @@
+# Table of content
+
+- [Table of content](#table-of-content)
+- [Create a static HTML web app by using Azure Cloud Shell](#create-a-static-html-web-app-by-using-azure-cloud-shell)
+  - [Login to Azure and download the sample app](#login-to-azure-and-download-the-sample-app)
+    - [Step 1](#step-1)
+    - [Create working directory and navigate to it](#create-working-directory-and-navigate-to-it)
+    - [Clone the sample app repo to the *htmlapp* directory](#clone-the-sample-app-repo-to-the-htmlapp-directory)
+  - [Create the web app](#create-the-web-app)
+    - [Change to the directory that contains the sample code and run the az webapp up command.](#change-to-the-directory-that-contains-the-sample-code-and-run-the-az-webapp-up-command)
+  - [Update and redeploy the app](#update-and-redeploy-the-app)
+  - [4. Once complete refresh the page opened before or navigate to the *URL* returned from the JSON that was displayed at the end of the depoloyment](#4-once-complete-refresh-the-page-opened-before-or-navigate-to-the-url-returned-from-the-json-that-was-displayed-at-the-end-of-the-depoloyment)
+  - [Clean up](#clean-up)
 # Create a static HTML web app by using Azure Cloud Shell
 
 After gathering information about App Service you've decided to create and update a simple web app to try it out. In this exercise you'll deploy a basic HTML+CSS site to Azure App Service by using the Azure CLI az webapp up command. You will then update the code and redeploy it by using the same command.

@@ -1,3 +1,25 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Explore Durable Function app patterns](#explore-durable-function-app-patterns)
+  - [Application Patterns](#application-patterns)
+  - [Function chaining](#function-chaining)
+  - [Fan out/fan in](#fan-outfan-in)
+  - [Async HTTP APIs](#async-http-apis)
+  - [Monitor](#monitor)
+  - [Human interaction](#human-interaction)
+- [Discover the four function types](#discover-the-four-function-types)
+  - [Orchestrator](#orchestrator)
+  - [Activity functions](#activity-functions)
+  - [Entity functions](#entity-functions)
+  - [Client functions](#client-functions)
+- [Explore task hubs](#explore-task-hubs)
+  - [Task hub Names](#task-hub-names)
+- [Explore durable orchestrations](#explore-durable-orchestrations)
+  - [Reliability](#reliability)
+- [Control timing in Durable Functions](#control-timing-in-durable-functions)
+  - [Usage for delay](#usage-for-delay)
+  - [Usage for timeout](#usage-for-timeout)
+- [Send and wait for events](#send-and-wait-for-events)
 # Explore Durable Function app patterns
 The *durable functions* extension lets you define stateful workflows by writing *orchestrator functions* and stateful entities by writing entity functions using the Azure Functions programming model. 
 

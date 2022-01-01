@@ -1,3 +1,8 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Exercise: Connect an app to Azure Cache for Redis by using .NET Core](#exercise-connect-an-app-to-azure-cache-for-redis-by-using-net-core)
+  - [Create Azure resources](#create-azure-resources)
+  - [Create the console application](#create-the-console-application)
 # Exercise: Connect an app to Azure Cache for Redis by using .NET Core
 ## Create Azure resources
 1. Sign in to the portal: https://portal.azure.com and open the Cloud Shell, and select Bash as the shell.
