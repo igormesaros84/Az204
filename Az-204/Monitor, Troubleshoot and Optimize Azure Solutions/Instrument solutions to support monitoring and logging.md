@@ -1,3 +1,23 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Explore Azure Monitor](#explore-azure-monitor)
+  - [What data does Azure Monitor collect?](#what-data-does-azure-monitor-collect)
+  - [Insights and curated visualizations](#insights-and-curated-visualizations)
+- [Explore Application Insights](#explore-application-insights)
+  - [How Application Insights works](#how-application-insights-works)
+  - [What Application Insights monitors](#what-application-insights-monitors)
+  - [Use Application Insights](#use-application-insights)
+- [Discover log-based metrics](#discover-log-based-metrics)
+  - [Log-based metrics](#log-based-metrics)
+  - [Pre-aggregated metrics](#pre-aggregated-metrics)
+- [Instrument an app for monitoring](#instrument-an-app-for-monitoring)
+  - [Auto-instrumentation](#auto-instrumentation)
+  - [Instrumenting for distributed tracing](#instrumenting-for-distributed-tracing)
+  - [How to enable distributed tracing](#how-to-enable-distributed-tracing)
+  - [Enabling via Application Insights SDKs](#enabling-via-application-insights-sdks)
+  - [Enable via OpenCensus](#enable-via-opencensus)
+- [Select an availability test](#select-an-availability-test)
+- [Troubleshoot app performance by using Application Map](#troubleshoot-app-performance-by-using-application-map)
 # Explore Azure Monitor
 The following diagram gives a high-level view of Azure Monitor. At the center of the diagram are the data stores for metrics and logs, which are the two fundamental types of data used by Azure Monitor. On the left are the sources of monitoring data that populate these data stores. On the right are the different functions that Azure Monitor performs with this collected data. This includes such actions as analysis, alerting, and streaming to external systems.
 ![azure-monitor](Resources/azure-monitor-overview.png)

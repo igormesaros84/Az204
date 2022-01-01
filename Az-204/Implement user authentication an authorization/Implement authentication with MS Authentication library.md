@@ -1,3 +1,12 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Introduction](#introduction)
+- [Explore the Microsoft Authentication Library (MSAL)](#explore-the-microsoft-authentication-library-msal)
+- [Initialize client applications](#initialize-client-applications)
+  - [Initializing public and confidential client applications from code](#initializing-public-and-confidential-client-applications-from-code)
+  - [Builder modifiers](#builder-modifiers)
+  - [Modifiers common to public and confidential client applications](#modifiers-common-to-public-and-confidential-client-applications)
+  - [Modifiers specific to confidential client applications](#modifiers-specific-to-confidential-client-applications)
 # Introduction
 The Microsoft Authentication Library (MSAL) enables developer to acquire tokens from the Microsoft identity platform in order to authenticate users and access secured web api's
 

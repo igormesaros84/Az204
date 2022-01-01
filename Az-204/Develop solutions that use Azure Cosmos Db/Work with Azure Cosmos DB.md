@@ -1,3 +1,26 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Explore Microsoft .Net SDK v3 for Azure Cosmos DB](#explore-microsoft-net-sdk-v3-for-azure-cosmos-db)
+  - [Cosmos client](#cosmos-client)
+  - [Database examples](#database-examples)
+    - [Create a database](#create-a-database)
+    - [Read a database by ID](#read-a-database-by-id)
+    - [Delete a database](#delete-a-database)
+  - [Container Examples](#container-examples)
+    - [Create container](#create-container)
+    - [Read item](#read-item)
+    - [Query an item](#query-an-item)
+  - [Example](#example)
+- [Create stored procedures](#create-stored-procedures)
+  - [Writing stored procedures](#writing-stored-procedures)
+  - [Create an item using stored procedure](#create-an-item-using-stored-procedure)
+  - [Arrays as input parameters for stored procedures](#arrays-as-input-parameters-for-stored-procedures)
+  - [Bounded execution](#bounded-execution)
+  - [Transactions with stored procedures](#transactions-with-stored-procedures)
+- [Create triggers and user-defined functions](#create-triggers-and-user-defined-functions)
+  - [Pre-triggers](#pre-triggers)
+  - [Post-triggers](#post-triggers)
+  - [User-defined functions](#user-defined-functions)
 # Explore Microsoft .Net SDK v3 for Azure Cosmos DB
 ## Cosmos client
 Creates a new `CosmosClient` with a connection string. `CosmosClient` is thread-safe. Its recommended to maintain a single instance of `CosmosClient` per lifetime of the application which enables efficient connection management and performance.

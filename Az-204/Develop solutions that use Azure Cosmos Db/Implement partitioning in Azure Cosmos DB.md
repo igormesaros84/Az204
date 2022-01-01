@@ -1,3 +1,16 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Introduction](#introduction)
+- [Explore partitions](#explore-partitions)
+  - [Logical partitions](#logical-partitions)
+  - [Physical partitions](#physical-partitions)
+- [Choose a partition key](#choose-a-partition-key)
+  - [Partition key for read heavy containers](#partition-key-for-read-heavy-containers)
+  - [Using item ID as the partition key](#using-item-id-as-the-partition-key)
+- [Create a synthetic partition key](#create-a-synthetic-partition-key)
+  - [Concatenate multiple properties of an item](#concatenate-multiple-properties-of-an-item)
+  - [Use a partition key with a random suffix](#use-a-partition-key-with-a-random-suffix)
+  - [Use a partition key with pre-calculated suffixes](#use-a-partition-key-with-pre-calculated-suffixes)
 # Introduction
 Azure Cosmos DB uses partitioning to scale individual containers in a database to meet the performance needs of your application.
 

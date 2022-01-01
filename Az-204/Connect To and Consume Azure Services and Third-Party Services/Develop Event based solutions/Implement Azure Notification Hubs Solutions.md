@@ -1,3 +1,11 @@
+# Table of content
+- [Table of content](#table-of-content)
+- [Azure Notification Hubs Fundamentals](#azure-notification-hubs-fundamentals)
+  - [Features](#features)
+  - [Components](#components)
+- [Namespaces and registering devices](#namespaces-and-registering-devices)
+  - [Notification Hubs and Namespaces](#notification-hubs-and-namespaces)
+  - [Sending notifications workflow](#sending-notifications-workflow)
 # Azure Notification Hubs Fundamentals
 
 ## Features
