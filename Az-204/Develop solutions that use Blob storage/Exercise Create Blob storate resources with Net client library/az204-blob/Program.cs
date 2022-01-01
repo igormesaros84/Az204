@@ -23,7 +23,7 @@ namespace az204_blob
         private static async Task ProcessAsync()
         {
             // Copy the connection string from the portal in the variable below.
-            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=imaz204blobsa;AccountKey=bERBM+uJgtPIVl0IXuTjgibRnUnw8VkKtTUAeeZQ4nWFlIArIn66Gx7l9rQT6O7IkRWUy+jIyfOZkWLHLXwXyw==;EndpointSuffix=core.windows.net";
+            string storageConnectionString = "<Storage connection string here>";
 
             // Create a client that can authenticate with a connection string
             BlobServiceClient blobServiceClient = new BlobServiceClient(storageConnectionString);
