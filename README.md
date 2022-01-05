@@ -32,6 +32,7 @@ Repo for my personal learning examples
     - [Implement user authentication using MSAL](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20user%20authentication%20an%20authorization/Implement%20authentication%20with%20MS%20Authentication%20library.md)
     - [Exercise: Implement user authentication using MSAL](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20user%20authentication%20an%20authorization/Exercise%20-%20Implement%20interactive%20authentication%20by%20using%20MSAL.NET.md)
     - [Implement shared access signatures](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20user%20authentication%20an%20authorization/Implement%20shared%20access%20signatures.md)
+    - [Explore Microsoft Graph](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20user%20authentication%20an%20authorization/Explore%20Microsoft%20Graph.md)
 - [Connect To and Consume Azure Services and Third-Party Services](https://github.com/igormesaros84/Az204/tree/master/Az-204/Connect%20To%20and%20Consume%20Azure%20Services%20and%20Third-Party%20Services)
     - [Implement Event based solutions](https://github.com/igormesaros84/Az204/tree/master/Az-204/Connect%20To%20and%20Consume%20Azure%20Services%20and%20Third-Party%20Services/Develop%20Event%20based%20solutions)
         - [Explore Azure Event Grid](https://github.com/igormesaros84/Az204/blob/master/Az-204/Connect%20To%20and%20Consume%20Azure%20Services%20and%20Third-Party%20Services/Develop%20Event%20based%20solutions/Explore%20Azure%20Event%20Grid.md)
