@@ -50,3 +50,5 @@ Repo for my personal learning examples
     - [Instrument solutions to support monitoring and logging](https://github.com/igormesaros84/Az204/blob/master/Az-204/Monitor%2C%20Troubleshoot%20and%20Optimize%20Azure%20Solutions/Instrument%20solutions%20to%20support%20monitoring%20and%20logging.md)
 - [Azure Message Queues](https://github.com/igormesaros84/Az204/tree/master/Az-204/Azure%20Message%20Queues)
   - [Discover Azure Message Queues](https://github.com/igormesaros84/Az204/blob/master/Az-204/Azure%20Message%20Queues/Discover%20Azure%20Message%20Queues.md)
+  - [Exercise: Send and receive message from a Service Bus queue by using .NET.](https://github.com/igormesaros84/Az204/blob/master/Az-204/Azure%20Message%20Queues/Exercise%20-%20Send%20nd%20receive%20message%20from%20a%20Service%20Bus%20queue%20by%20using%20.net.md)
+  - [Example: Create and manage Azure Queue Storage queues and messages by using .NET](https://github.com/igormesaros84/Az204/blob/master/Az-204/Azure%20Message%20Queues/Example%20-%20Azure%20Queue%20Storage.md)
