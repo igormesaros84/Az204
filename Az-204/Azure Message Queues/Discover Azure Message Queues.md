@@ -105,5 +105,16 @@ A subset of the broker properties described previously, specifically `To`, `Repl
 ## Payload serialization
  The receiver can retrieve those objects with the `GetBody<T>()` method, supplying the expected type. With AMQP, the objects are serialized into an AMQP graph of `ArrayList` and `IDictionary<string,object>` objects, and any AMQP client can decode them.
 
+ # Explore Azure Queue Storage
+- **Azure QUeue Storage** is a service for storing large numbers of messages.
+- Messages can be up to 64 kb in size.
+- A queue may contain millions of messages, up to the capacity of the storage account
+
+The Queue service contains the following components:
+![components](resources/queue-storage-service-components.png)
+
+- Queues are addressable using an URL
+- All access is done through a storage account
+- maximum TTL can be any positive number, -1 means the message doesn't expire. Default is 7 days
 
 
