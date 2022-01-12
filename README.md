@@ -48,3 +48,5 @@ Repo for my personal learning examples
     - [Integrate Caching and Content Delivery](https://github.com/igormesaros84/Az204/blob/master/Az-204/Monitor%2C%20Troubleshoot%20and%20Optimize%20Azure%20Solutions/Integrate%20Caching%20and%20Content%20Delivery.md)
     - [Exercise: Connect an app to Azure Cache for Redis by using .NET Core](https://github.com/igormesaros84/Az204/blob/master/Az-204/Monitor%2C%20Troubleshoot%20and%20Optimize%20Azure%20Solutions/Exercise%20-%20Connect%20an%20app%20to%20Azure%20Cache%20for%20Redis%20by%20%20Net%20Core.md)
     - [Instrument solutions to support monitoring and logging](https://github.com/igormesaros84/Az204/blob/master/Az-204/Monitor%2C%20Troubleshoot%20and%20Optimize%20Azure%20Solutions/Instrument%20solutions%20to%20support%20monitoring%20and%20logging.md)
+- [Implement infrastructure as a service solutions](https://github.com/igormesaros84/Az204/tree/master/Az-204/Implement%20infrastructure%20as%20a%20service%20solutions)
+  - [Arm templates](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20infrastructure%20as%20a%20service%20solutions/Arm%20templates.md)
