@@ -123,7 +123,7 @@ az eventhubs eventhub authorization-rule keys list --resource-group MyResourceGr
 - **Consistent prefix** - In consistent prefix option, updates that are returned contain some prefix of all the updates, with no gaps. Consistent prefix consistency level guarantees that reads never see out-of-order writes.
 ![consistent-prefix](Resources/strong-consistency.gif)
 - **Eventual** - In eventual consistency, there's no ordering guarantee for reads. 
-![eventual](resources/eventual-consistency.gif)
+![eventual](Resources/eventual-consistency.gif)
 
 ## Blob storage
 ### **Question** How would you call for implementing a blob lease?
