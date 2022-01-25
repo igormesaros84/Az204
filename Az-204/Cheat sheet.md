@@ -116,7 +116,7 @@ az eventhubs eventhub authorization-rule keys list --resource-group MyResourceGr
 ### Consistency levels
 - **Strong** - The reads are guaranteed to return the most recent committed version of an item. \
 ![stron-consistency](Resources/strong-consistency.gif)
-- **Bounded staleness** - The reads might lag behind writes by at most "K" versions (that is, "updates") of an item or by "T" time interval, whichever is reached first.
+- **Bounded staleness** - The reads might lag behind writes by at most "K" versions (that is, "updates") of an item or by "T" time interval, whichever is reached first. \
 ![bounded-staleness](Resources/bounded-staleness-consistency.gif)
 - **Session** - In session consistency, within a single client session reads are guaranteed to honor the consistent-prefix, monotonic reads, monotonic writes, read-your-writes, and write-follows-reads guarantees. The following graphic illustrates the session consistency with musical notes. The "West US 2 writer" and the "West US 2 reader" are using the same session (Session A) so they both read the same data at the same time. Whereas the "Australia East" region is using "Session B" so, it receives data later but in the same order as the writes.
 ![session-consistency](Resources/session-consistency.gif)
