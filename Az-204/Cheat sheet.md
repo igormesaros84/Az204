@@ -106,7 +106,7 @@ az eventhubs eventhub authorization-rule keys list --resource-group MyResourceGr
 ![basic-app-service-plan](Resources/ckeditor_36_54_56.png)
 
 ### **Question**: Create 3 copies of storage account
-- `copyIndex()` returns the current iteration in the loop.
+- `copyIndex()` returns the current iteration in the loop.\
 ![copyIndex](Resources/ckeditor_1.1.png)
 
 ### **Question**: At times the Azure Function erros out with a Timeout expired exception. This may have occured because all pooled connections were in use and max pool size was reached.
@@ -114,10 +114,10 @@ az eventhubs eventhub authorization-rule keys list --resource-group MyResourceGr
 # Develop fo Azure storage
 ## Cosmos DB
 ### Consistency levels
-- **Strong** - The reads are guaranteed to return the most recent committed version of an item.
+- **Strong** - The reads are guaranteed to return the most recent committed version of an item. \
 ![stron-consistency](Resources/strong-consistency.gif)
 - **Bounded staleness** - The reads might lag behind writes by at most "K" versions (that is, "updates") of an item or by "T" time interval, whichever is reached first.
-![bounded-staleness](resources/bounded-staleness-consistency.gif)
+![bounded-staleness](Resources/bounded-staleness-consistency.gif)
 - **Session** - In session consistency, within a single client session reads are guaranteed to honor the consistent-prefix, monotonic reads, monotonic writes, read-your-writes, and write-follows-reads guarantees. The following graphic illustrates the session consistency with musical notes. The "West US 2 writer" and the "West US 2 reader" are using the same session (Session A) so they both read the same data at the same time. Whereas the "Australia East" region is using "Session B" so, it receives data later but in the same order as the writes.
 ![session-consistency](Resources/session-consistency.gif)
 - **Consistent prefix** - In consistent prefix option, updates that are returned contain some prefix of all the updates, with no gaps. Consistent prefix consistency level guarantees that reads never see out-of-order writes.
