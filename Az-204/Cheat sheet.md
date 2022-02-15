@@ -12,8 +12,9 @@
     - [**Question**: The messaging system needs to have the following properties: Provide transactional support, SUpport duplicate detection of messages, Messages should never expire. What should you use?](#question-the-messaging-system-needs-to-have-the-following-properties-provide-transactional-support-support-duplicate-detection-of-messages-messages-should-never-expire-what-should-you-use)
     - [Azure Service bus topic filters](#azure-service-bus-topic-filters)
   - [Azure Event Hubs](#azure-event-hubs)
-    - [**Question**: Get connection string from existine Azure Event Hubs](#question-get-connection-string-from-existine-azure-event-hubs)
+    - [**Question**: Get connection string from existing Azure Event Hubs](#question-get-connection-string-from-existing-azure-event-hubs)
     - [**Question**: What would you use to store the end-user agreements?](#question-what-would-you-use-to-store-the-end-user-agreements)
+    - [**Question**: Using Azure Event Hubs for ingestion of events from multiple IoT enabled devices, you need to ensure that the events are persisted to Azure Blob Storage](#question-using-azure-event-hubs-for-ingestion-of-events-from-multiple-iot-enabled-devices-you-need-to-ensure-that-the-events-are-persisted-to-azure-blob-storage)
   - [Event Grid](#event-grid)
     - [**Question**: Configure Event Grid service filters so that your application only receives events from teh virtual machine service or the devtestlab service.](#question-configure-event-grid-service-filters-so-that-your-application-only-receives-events-from-teh-virtual-machine-service-or-the-devtestlab-service)
     - [**Question** How to Monitor virtual machine changes, and send email to IT Admin?](#question-how-to-monitor-virtual-machine-changes-and-send-email-to-it-admin)
@@ -35,7 +36,7 @@
     - [You have to fetch and set the Metadata for the blobs in the storage account via a .Net Module. What is the right sequence of steps?](#you-have-to-fetch-and-set-the-metadata-for-the-blobs-in-the-storage-account-via-a-net-module-what-is-the-right-sequence-of-steps)
 - [Implement Azure security](#implement-azure-security)
     - [**Question**: Your team has the ability to view resources and they are able to create support tickets for all subscriptions. What do you need to add to the Action section for the custom role?](#question-your-team-has-the-ability-to-view-resources-and-they-are-able-to-create-support-tickets-for-all-subscriptions-what-do-you-need-to-add-to-the-action-section-for-the-custom-role)
-    - [**Question**: Configure an ASP.Net Core application so that the uer's permission can be used with the Azure Blob container](#question-configure-an-aspnet-core-application-so-that-the-uers-permission-can-be-used-with-the-azure-blob-container)
+    - [**Question**: Configure an ASP.Net Core application so that the user's permission can be used with the Azure Blob container](#question-configure-an-aspnet-core-application-so-that-the-users-permission-can-be-used-with-the-azure-blob-container)
     - [**Question**: Users must be able to log into the web application using their Azure Ad credentials. The personalization of the web application must be based on the membership in Active Directory groups. Configure the application manifest file.](#question-users-must-be-able-to-log-into-the-web-application-using-their-azure-ad-credentials-the-personalization-of-the-web-application-must-be-based-on-the-membership-in-active-directory-groups-configure-the-application-manifest-file)
 # Monitor, troubleshoot, and optimize Azure solutions
 
@@ -70,7 +71,7 @@ string value = db.StringGet("favorite:flavor");
 - If the sender resides in a different process, use a single factory per process
 - Leave batches store access enabled
 - Use asynchronous operations to take advantage of client-side batching
-- Set the prefetch count to 20 times the maximum processing rates of all receivers of a factory.
+- Set the pre-fetch count to 20 times the maximum processing rates of all receivers of a factory.
 
 ### **Question**: The messaging system needs to have the following properties: Provide transactional support, SUpport duplicate detection of messages, Messages should never expire. What should you use?
 - Azure Service Bus Queue
@@ -89,12 +90,16 @@ string value = db.StringGet("favorite:flavor");
   - To
   - any user-defined properties.
 ## Azure Event Hubs
-### **Question**: Get connection string from existine Azure Event Hubs
+### **Question**: Get connection string from existing Azure Event Hubs
 ```
 az eventhubs eventhub authorization-rule keys list --resource-group MyResourceGroupName --namespace-name MyNamespaceName --eventhub-name MyEventHubName --name MyAuthRuleName
 ```
 ### **Question**: What would you use to store the end-user agreements?
 - Azure Event Hubs - Based on the number of agreements generated per hour, it's best to first ingest the data into Azure Event Hubs. Once the agreements are ingested into Azure Event Hubs, store the user's agreements data into aAzure Blob storage.
+
+### **Question**: Using Azure Event Hubs for ingestion of events from multiple IoT enabled devices, you need to ensure that the events are persisted to Azure Blob Storage
+- Use **Event Hubs Capture** - Enables you to automatically capture the streaming data in Even Hubs in an Azure Blob storage or Azure Data Lake Storage Gen1or Gen 2
+
 ## Event Grid
 ### **Question**: Configure Event Grid service filters so that your application only receives events from teh virtual machine service or the devtestlab service.
 ```
@@ -136,7 +141,7 @@ az eventhubs eventhub authorization-rule keys list --resource-group MyResourceGr
 ![copyIndex](Resources/ckeditor_1.1.png)
 
 ### **Question**: At times the Azure Function errors out with a Timeout expired exception. This may have occurred because all pooled connections were in use and max pool size was reached.
-- Edit the `host.json` file and change the `batchSize` property 
+- Edit the `host.json` file and change the `batchSize` property
 # Develop fo Azure storage
 
 ### **Question**: Migrate multiple database sources to Azure
@@ -181,7 +186,7 @@ az webapp log tail --name whizlabwebapp --resource-group whizlab-rg
 ### **Question**: Your team has the ability to view resources and they are able to create support tickets for all subscriptions. What do you need to add to the Action section for the custom role?
 - "*/read","Microsoft.Support/*"
 
-### **Question**: Configure an ASP.Net Core application so that the uer's permission can be used with the Azure Blob container
+### **Question**: Configure an ASP.Net Core application so that the user's permission can be used with the Azure Blob container
 ![registered-app-permissions](Resources/registered-app-permissions-2.png)
 
 ### **Question**: Users must be able to log into the web application using their Azure Ad credentials. The personalization of the web application must be based on the membership in Active Directory groups. Configure the application manifest file.
