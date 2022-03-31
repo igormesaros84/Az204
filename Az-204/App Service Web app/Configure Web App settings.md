@@ -1,11 +1,11 @@
 # Configure application settings
 Application settings can be accessed by navigating to the app's management page and selecting **Configuration > Application Settings.**
-![example](Resources/configure-app-settings.png)
-these values are the same as setting the `<appSettings>` in the *Web.config* but these settings override the onses in *Web.config* or *appsettings.json*.
+![example](Resources/configure-app-settings.png)\
+these values are the same as setting the `<appSettings>` in the *Web.config* but these settings override the ones in *Web.config* or *appsettings.json*.
 # Configure connection strings
-For ASP.NET and ASP.NET Core developers the values set in App Setvice override the ones in *Web.config*. For other language stacks, it's better to use app settings instead, because connection strings require special formatting in the variable keys in order to access the values.
+For ASP.NET and ASP.NET Core developers the values set in App Service override the ones in *Web.config*. For other language stacks, it's better to use app settings instead, because connection strings require special formatting in the variable keys in order to access the values.
 # Configure general settings
-In the **Configuration > General settings** section you can configure some common settings for your app. Some settings requre to scale up to higher pricing tiers.
+In the **Configuration > General settings** section you can configure some common settings for your app. Some settings require to scale up to higher pricing tiers.
 
  - **Platform settings**: Lets you configure settings for the hosting platform, including:
 
@@ -42,7 +42,7 @@ A certificate is uploaded into an app is stored in a deployment unit that is bou
 
 | Option | Description |
 |--------|-----------|
-| Create a fre app Service managed certificate | A private certificate that's free of charge and easy to use if just need to secure your custom domain in App Service. Custom SSL is not supported in **F1** or **D1** tier. |
+| Create a free app Service managed certificate | A private certificate that's free of charge and easy to use if just need to secure your custom domain in App Service. Custom SSL is not supported in **F1** or **D1** tier. |
 | Purchase an App Service certificate | A Private certificate that's managed by Azure. It combines the simplicity of automated certificate management and the flexibility of renewal and export options. |
 | Import a certificate from Key Vault | Useful if you use Azure key Vault to manage your certificates. |
 | Upload a private certificate | If you already have a private certificate from a third-party provider, you can upload it. |
