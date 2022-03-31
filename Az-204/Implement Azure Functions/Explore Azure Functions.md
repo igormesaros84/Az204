@@ -1,5 +1,11 @@
+- [Compare Azure Functions and Azure Logic Apps](#compare-azure-functions-and-azure-logic-apps)
+- [Compare Functions and WebJobs](#compare-functions-and-webjobs)
+- [Compare Azure Functions hosting options](#compare-azure-functions-hosting-options)
+- [Scale Azure Functions](#scale-azure-functions)
+- [Scaling behaviors](#scaling-behaviors)
 # Compare Azure Functions and Azure Logic Apps
-Both enable serverless worloads. **Functions** is a serverless compute service, whereas **Azure Logic Apps** provides serverless workflows. Both support orchestrations, which is a collection of functions or steps, called actions in Logic apps.
+
+Both enable serverless workloads. **Functions** is a serverless compute service, whereas **Azure Logic Apps** provides serverless workflows. Both support orchestrations, which is a collection of functions or steps, called actions in Logic apps.
 
 For **Azure Functions**, you develop orchestrations by writing code and using the *Durable Functions* extension. For **Logic Apps**, you create orchestrations by using a GUI or editing configuration files.
 
@@ -28,21 +34,21 @@ Azure Functions offers more developer productivity than Azure App Service WebJob
 |Plan | Benefits |
 |-----|---------|
 Consumption plan | Default hosting plan. Scales automatically and you only pay for compute resources when your functions are running. 
-Functions Premium plan |Automatically scales based on demand using pre-warmed workers which run applications with no delay after being idle, runs on more powerfull instances and connectos to virtual networks.
+Functions Premium plan |Automatically scales based on demand using pre-warmed workers which run applications with no delay after being idle, runs on more powerful instances and connector to virtual networks.
 App service plan | Run at regular App Service plan rates. Best for long-running scenarios where Durable Functions can't be used.
 
 There are two other hosting options which provide the highest amount of control and isolation in which to run your function apps.
 
 |Hosting option | Details |
 |---------------|---------|
-**ASE** | [App Service Environment ASE](https://docs.microsoft.com/en-us/azure/app-service/environment/intro) is a fully isolated and dedicate environment for securely running App Service apps at hgih scale.
-**Kubernetes**|Fully isolated and dedicated environment running on top of Kubernetes platform. For more info [Azure Functions on Kibernetes with KEDA](https://docs.microsoft.com/en-us/azure/azure-functions/functions-kubernetes-keda)
+**ASE** | [App Service Environment ASE](https://docs.microsoft.com/en-us/azure/app-service/environment/intro) is a fully isolated and dedicate environment for securely running App Service apps at high scale.
+**Kubernetes**|Fully isolated and dedicated environment running on top of Kubernetes platform. For more info [Azure Functions on Kubernetes with KEDA](https://docs.microsoft.com/en-us/azure/azure-functions/functions-kubernetes-keda)
 
 # Scale Azure Functions
-Each instance of the Functions host in the Consumption plan is limited to 1.5 GB of memory and one CPU. All functions within a function app share resource with an instance and scaleat the same time. In the Premium plan, the plan size determines the available memory and CPU for all apps and that plan on that service.
+Each instance of the Functions host in the Consumption plan is limited to 1.5 GB of memory and one CPU. All functions within a function app share resource with an instance and scale at the same time. In the Premium plan, the plan size determines the available memory and CPU for all apps and that plan on that service.
 
-# Scaling behaviours
+# Scaling behaviors
 - **Maximum instances**: A single function app only scales out to maximum of 200 instances.
 - **New instance rate**: For HTTP triggers, new instances are allocated, at most once per second. For non-Http triggers, new instances are allocated, at most once every 30 seconds. Scaling is faster when running in a Premium plan.
 
-You can specify a lower maximum for a specific app by modifying the `functionAppScaleLimit` value, it can be set to `0` or `null` for unrestriced.
+You can specify a lower maximum for a specific app by modifying the `functionAppScaleLimit` value, it can be set to `0` or `null` for unrestricted.

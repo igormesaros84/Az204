@@ -16,7 +16,7 @@ In this exercise you'll learn how to create a simple C# function that responds t
 ## Create your local project
 1. Choose the Azure icon in the Activity bar, then in the **Azure:Functions** area, select **Create new project**.
 
-![create project](Resources/create-function.png)
+![create project](Resources/create-function.png)\
 2. Choose a directory location for jour project
 3. Provide the following information at the prompts:
 

@@ -170,7 +170,7 @@ public class TodoTableEntity : TableEntity
 }
 ```
 
-> `TableEntity` can should be used from `Microsoft.Azure.Cosmos.Table;`
+> `TableEntity` should be used from `Microsoft.Azure.Cosmos.Table;`
 2. Include the `Microsoft.Azure.WebJobs.Extensions.Storage` nuget package
 > NOTE: They have for some reason removed `TableAttribute` from the nuget package above. [Until they add it back again](https://github.com/Azure/azure-sdk-for-net/issues/25342) you should use an earlier version 4 for this example.
 
@@ -294,10 +294,10 @@ public static async Task<IActionResult> DeleteTodo(
 ![image bellow](Resources/azure-storage-explorer.png) in the **Local & Attached > Storage Accounts > (Emulator - Default Ports)(Key) > Tables > todos** there are 2 rows that I have created using postman.
 
 ## Timer trigger
-1. Create new trigger
+1. Create new trigger\
 ![create-trigger](Resources/add-new-function.png)
 
-2. Select a `Timer Trigger`. Notice the *Schedule* that is a CRON expression and it is set to run every 5 minutes.
+2. Select a `Timer Trigger`. Notice the *Schedule* that is a CRON expression and it is set to run every 5 minutes.\
 ![Timer-trigger](Resources/timer-function.png)
 
 3. Modify the `Run` method so it looks like this:

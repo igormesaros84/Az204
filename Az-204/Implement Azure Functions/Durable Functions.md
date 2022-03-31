@@ -24,7 +24,7 @@
 The *durable functions* extension lets you define stateful workflows by writing *orchestrator functions* and stateful entities by writing entity functions using the Azure Functions programming model. 
 
 ## Application Patterns
-The primary use case for Durable Functions is simplyfying complex, stateful coordination requirements in serverless applications.
+The primary use case for Durable Functions is simplifying complex, stateful coordination requirements in serverless applications.
 - Function chaining
 - Fan-out/fan-in
 - Async HTTP APIs
@@ -55,7 +55,7 @@ public static async Task<object> Run(
 ```
 
 ## Fan out/fan in
-n the fan out/fan in pattern, you execute multiple functions in parallel and then wait for all functions to finish. Often, some aggregation work is done on the results that are returned from the functions.
+In the fan out/fan in pattern, you execute multiple functions in parallel and then wait for all functions to finish. Often, some aggregation work is done on the results that are returned from the functions.\
 ![Fan in out](Resources/fan-out-fan-in.png)
 
 In the code example below, the fan-out work is distributed to multiple instances of the `F2` function. The work is tracked by using a dynamic list of tasks. The .NET `Task.WhenAll` API or JavaScript `context.df.Task.all` API is called, to wait for all the called functions to finish. Then, the `F2` function outputs are aggregated from the dynamic task list and passed to the `F3` function.
@@ -84,15 +84,15 @@ public static async Task Run(
 ```
 
 ## Async HTTP APIs
-The async HTTP API pattern addresses the problem of coordinating the state of long-running operations with external clients. A common way to implement this pattern is by having an HTTP endpoint trigger the long-running action. Then, redirect the client to a status endpoint that the client polls to learn when the operation is finished.
+The async HTTP API pattern addresses the problem of coordinating the state of long-running operations with external clients. A common way to implement this pattern is by having an HTTP endpoint trigger the long-running action. Then, redirect the client to a status endpoint that the client polls to learn when the operation is finished.\
 ![Async](Resources/async-http-api.png)
 
 ## Monitor
-The monitor pattern refers to a flexible, recurring process in a workflow. An example is polling until specific conditions are met. 
+The monitor pattern refers to a flexible, recurring process in a workflow. An example is polling until specific conditions are met.\
 ![Monitor](Resources/monitor.png)
 
 ## Human interaction
-Many automated processes involve some kind of human interaction. Involving humans in an automated process is tricky because people aren't as highly available and as responsive as cloud services. An automated process might allow for this interaction by using timeouts and compensation logic.
+Many automated processes involve some kind of human interaction. Involving humans in an automated process is tricky because people aren't as highly available and as responsive as cloud services. An automated process might allow for this interaction by using timeouts and compensation logic.\
 ![Human interaction](Resources/human-interaction-pattern.png)
 
 # Discover the four function types
@@ -105,10 +105,10 @@ Many automated processes involve some kind of human interaction. Involving human
 Describe how actions are executed and the order in which actions are executed.
 
 ## Activity functions
-Activity functions are the basic unit of work in a druable function orchestration. The task invole checking the inventory, charging the customer, and creating a shipment. Each task would be a separate activity function.
+Activity functions are the basic unit of work in a durable function orchestration. The task involve checking the inventory, charging the customer, and creating a shipment. Each task would be a separate activity function.
 
 ## Entity functions
-They define operations for reading and updating small pieces of state. We often refer to these stateful entities as durable entities.Thy are functions with special trigger type, *entity trigger*.
+They define operations for reading and updating small pieces of state. We often refer to these stateful entities as durable entities.They are functions with special trigger type, *entity trigger*.
 
 ## Client functions
 Any non-orchestrator function can be a client function. What makes a function a client function is its use of the *durable client output binding*.
@@ -116,7 +116,7 @@ Any non-orchestrator function can be a client function. What makes a function a 
 Orchestrator and entity functions cannot be triggered directly using the buttons in the Azure portal. If you want to test an orchestrator or entity function in the Azure portal, you must instead run a client function that starts an orchestrator or entity function as part of its implementation.
 
 # Explore task hubs
-A task hub in Durable Functions is a logical container for durable storage resources taht are used for orchestrations and entities. Orchestrator, activity and entity functions can only directly interact with each other when they belong to the same task hub. 
+A task hub in Durable Functions is a logical container for durable storage resources that are used for orchestrations and entities. Orchestrator, activity and entity functions can only directly interact with each other when they belong to the same task hub. 
 
 If multiple function apps share a storage account, each function app must be configured with a separate tak hub name. A storage account can containe multiple task hubs.
 
@@ -137,7 +137,7 @@ The task hub name is declared in the host.json file, as shown in the following e
 You can use an *orchestrator function* to orchestrate the execution of other Durable functions within a function app.
 
 ## Reliability
-Orchestartor functions reliably maintain their execution state by using the event sourcing design pattern. Instead of directly storing the current state of an orchestration, the Durable Task Framework uses an append-only store to record the full series of actions the function orchestration takes.
+Orchestrator functions reliably maintain their execution state by using the event sourcing design pattern. Instead of directly storing the current state of an orchestration, the Durable Task Framework uses an append-only store to record the full series of actions the function orchestration takes.
 
 When an orchestration function is given more work to do, the orchestrator wakes up and re-executes the entire function from the start to rebuild the local state. During the replay, if the code tries to call a function (or do any other async work), the Durable Task Framework consults the execution history of the current orchestration. If it finds that the activity function has already executed and yielded a result, it replays that function's result and the orchestrator code continues to run. Replay continues until the function code is finished or until it has scheduled new async work.
 

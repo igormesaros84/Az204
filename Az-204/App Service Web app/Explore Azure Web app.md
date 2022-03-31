@@ -30,7 +30,7 @@ In App Service, an app (Web Apps, API Apps, or Mobile Apps) always runs in an *A
 *The pricing tier* of an App Service plan determines what App Service features you get and how much you pay for the plan. There are a few categories of pricing tiers:
 - **Shared compute**: Both **Free** and **Shared** share the resource pools of your apps with the apps of other customers. These tiers allocate CPU quotas to each app that runs on the shared resources, and the resources can't scale out.
 - **Dedicated compute**: The **Basic**, **Standard**, **Premium**, **Premium V2**, and **Premium V3**, tiers run apps on dedicated Azure VMs. The higher the tier, the more VM instances are available to scale out.
-- **Isolated**: this tier runs dedicated Azure VMs on dedicated Azure Virtual Networks. It provides the maxumum scale0out capabilities.
+- **Isolated**: this tier runs dedicated Azure VMs on dedicated Azure Virtual Networks. It provides the maximum scale0out capabilities.
 - **Consumption**:This tier is only available to *function apps*. It scales the functions dynamically depending on workload.
 
 > App Service Free and Shared (preview) hosting plans are base tiers that run on the same Azure virtual machines as other App Service apps. Some apps might belong to other customers. These tiers are intended to be used only for development and testing purposes.
