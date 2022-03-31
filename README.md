@@ -54,3 +54,7 @@ Repo for my personal learning examples
   - [Example: Create and manage Azure Queue Storage queues and messages by using .NET](https://github.com/igormesaros84/Az204/blob/master/Az-204/Azure%20Message%20Queues/Example%20-%20Azure%20Queue%20Storage.md)
 - [Implement infrastructure as a service solutions](https://github.com/igormesaros84/Az204/tree/master/Az-204/Implement%20infrastructure%20as%20a%20service%20solutions)
   - [Arm templates](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20infrastructure%20as%20a%20service%20solutions/Arm%20templates.md)
+- [Implement secure cloud solutions](https://github.com/igormesaros84/Az204/tree/master/Az-204/Implement%20secure%20cloud%20solutions)
+  - [Implement Azure Key Vault](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20secure%20cloud%20solutions/Implement%20Azure%20Key%20Vault.md)
+  - [Implement managed identities](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20secure%20cloud%20solutions/Implement%20managed%20identities.md)
+  - [Implement Azure App Configuration](https://github.com/igormesaros84/Az204/blob/master/Az-204/Implement%20secure%20cloud%20solutions/Implement%20Azure%20App%20Configuration.md)
